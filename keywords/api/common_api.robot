@@ -2,7 +2,8 @@
 Resource    ${CURDIR}/../../testdata/import_resources.robot
 
 *** Variables ***
-${sku_query}    $..items[*].product_name
+${wishlist_product_query}       $..items[*].product_name
+${cart_product_query}           $..cart.items[*].name
 
 *** Keywords ***
 Post Login tops user
@@ -46,10 +47,34 @@ Get user wishlist info
     ${response}=            REST.Output    response
     [Return]                ${response}
 
+Get user shopping cart info
+    [Arguments]             ${user_cookie}
+    ${end_point}=           Set Variable    ${api_url}/cart?cartId=&cartLoad=true
+    &{header}=              Create Dictionary
+    ...     accept=*/*
+    ...     accept-encoding=gzip,deflate,br
+    ...     accept-language=en-US,en;q=0.9
+    ...     x-store-code=tops_sa_054_en
+    ...     host=www.tops.co.th
+    ...     connection=keep-alive
+    ...     cookie=${user_cookie}
+    ${response}=            REST.Get    endpoint=${end_point}    headers=&{header}
+    REST.Integer            response status    200
+    ${response}=            REST.Output    response
+    [Return]                ${response}
+
 Login tops user and get list product name on wishlist
     [Arguments]             ${user_name}        ${password}
     ${user_cookie}          Post Login tops user  ${user_name}      ${password}
     ${user_token}           Get use_token from login response cookie  ${user_cookie}
     ${wishlist_response}    Get user wishlist info       ${user_token}
-    ${list_product_name}    JSONLibrary.Get Value From Json     ${wishlist_respone}     ${sku_query}
+    ${list_product_name}    JSONLibrary.Get Value From Json     ${wishlist_response}     ${wishlist_product_query}
+    [Return]                ${list_product_name}
+
+Login tops user and get list product name on shopping cart
+    [Arguments]             ${user_name}        ${password}
+    ${user_cookie}          Post Login tops user                        ${user_name}      ${password}
+    ${user_token}           Get use_token from login response cookie    ${user_cookie}
+    ${cart_response}    Get user shopping cart info                 ${user_token}
+    ${list_product_name}    JSONLibrary.Get Value From Json             ${cart_response}     ${cart_product_query}
     [Return]                ${list_product_name}
