@@ -34,21 +34,21 @@ Click a random product on first view
     Close popup if it appeared                      ${common_locator.home_page_noti_if}
 
 Get text and compare value
-    [Arguments]    ${locator}    ${text_value}
-    ${text}    Get Text Element    ${locator}
+    [Arguments]    ${locator}       ${text_value}
+    ${text}    Get Text Element     ${locator}
     BuiltIn.Return From Keyword If
     ...    '${text}' == '${text_value}'    ${true}
 
 Get text and search value
-    [Arguments]    ${locator}    ${text_value}
+    [Arguments]      ${locator}    ${text_value}
     ${text}    Get Text Element    ${locator}
     ${status}    BuiltIn.Run Keyword And Return Status
-    ...    BuiltIn.Should Contain    ${text}    ${text_value}
-    BuiltIn.Return From Keyword     ${status}
+    ...    BuiltIn.Should Contain       ${text}    ${text_value}
+    BuiltIn.Return From Keyword         ${status}
 
 Input data and verify text for web element
     [Arguments]     ${locator}      ${expect_text}
-    SeleniumLibrary.Input Text     ${locator}    ${expect_text}
+    SeleniumLibrary.Input Text      ${locator}    ${expect_text}
     ${real_text}=    SeleniumLibrary.Get Value    ${locator}
     Should Be Equal    '${real_text}'    '${expect_text}'
 
@@ -93,23 +93,23 @@ Select from drop down by label
     Wait Until Keyword Succeeds    3x    5s    SeleniumLibrary.Select From List By Label   ${locator}    ${label}  
 
 Scroll Down And Wait To Get Available Element
-    [Arguments]    ${locator}
-    ${section}     Set Variable     ${11}
-    ${page_height}    SeleniumLibrary.Get Element Size     ${common_locator.entire_page}
-    ${page_height}    Set Variable    ${page_height}[1]
+    [Arguments]         ${locator}
+    ${section}          Set Variable     ${11}
+    ${page_height}      SeleniumLibrary.Get Element Size     ${common_locator.entire_page}
+    ${page_height}      Set Variable    ${page_height}[1]
     ${scroll_length}    Evaluate     '${page_height}/${section}'
     FOR    ${index}  IN RANGE  ${section}
         SeleniumLibrary.Execute Javascript     window.scrollTo(0,${${scroll_length}*${index}})
-        ${status}    Run Keyword And Return Status     SeleniumLibrary.Wait Until Element Is Visible     ${locator}     timeout=10
+        ${status}       Run Keyword And Return Status     SeleniumLibrary.Wait Until Element Is Visible     ${locator}     timeout=10
         BuiltIn.Return From Keyword If     '${status}' == '${true}'
     END
         BuiltIn.Fail     msg=Not found element in this page.
 
 Scroll Down with times
-    [Arguments]    ${times}
-    ${section}     Set Variable     ${times}
-    ${page_height}    SeleniumLibrary.Get Element Size     ${common_locator.entire_page}
-    ${page_height}    Set Variable    ${page_height}[1]
+    [Arguments]         ${times}
+    ${section}          Set Variable     ${times}
+    ${page_height}      SeleniumLibrary.Get Element Size     ${common_locator.entire_page}
+    ${page_height}      Set Variable    ${page_height}[1]
     ${scroll_length}    Evaluate     '${page_height}/5'
     FOR    ${index}  IN RANGE  ${section}
         SeleniumLibrary.Execute Javascript     window.scrollTo(0,${${scroll_length}*${index}})
@@ -121,11 +121,16 @@ Navigate to my wishlist page
     Click Element                       ${common_locator.my_list}  
 
 Login tops user
-    [Arguments]     ${user_name}    ${password}
+    [Arguments]                         ${user_name}    ${password}
     Click Element                       ${common_locator.login_button}
     Verify Web Element Is Visible       ${common_locator.user_input}
     SeleniumLibrary.Input Text          ${common_locator.user_input}            ${user_name}
     SeleniumLibrary.Input password      ${common_locator.user_password}         ${password}
     Click Element                       ${common_locator.submit_button}
     Verify Web Element Is Visible       ${common_locator.account_menu}
+
+Go to home page and login
+    [Arguments]     ${url}      ${user_name}    ${password}
+    Open browser to page        ${url}
+    Login tops user             ${user_name}    ${password}
     

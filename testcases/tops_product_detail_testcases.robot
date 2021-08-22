@@ -27,7 +27,9 @@ Test case 2: Verify elements on product detail page
 Test case 3: Verify customer add a product to their wishlist
     # //common_keywords.Open browser to page    ${page_detail_url}
     Click Element       ${product_detail_locator.wishlist_button}
+    # Co san keyword login trong commonkeyword roi
     login_page.Login with account   top77982@gmail.com   Password1
+
     Click Element  ${product_detail_locator.my_list_navigation}
     ${expected_text}   Set Variable     "Mamy Poko Pants Extra Dry Skin Baby Diaper Pants Boy Size XL 56pcs."
     Element Text Should Be      ${wishlist_locator.product_on_wishlist_page}    ${expected_text}
