@@ -9,15 +9,10 @@ Click to wishlist button
 Click to wishlist page
     Click Element       ${product_detail_locator.my_list_navigation}
 
-Select a random product and add it to cart
-    common_keywords.Click a random product on first view
-    Click Element       ${product_detail_locator.add_to_cart_button}
-    BuiltIn.Sleep       5s 
-
 Click to cart icon to checkout
-    SeleniumLibrary.Mouse Over      ${product_detail_locator.cart_icon}
-    common_keywords.Verify Web Element Is Visible      ${product_detail_locator.checkout_button}
-    Click Element       ${product_detail_locator.checkout_button}
+    SeleniumLibrary.Mouse Over                          ${product_detail_locator.cart_icon}
+    common_keywords.Verify Web Element Is Visible       ${product_detail_locator.checkout_button}
+    Click Element                                       ${product_detail_locator.checkout_button}
 
 Verify add wishlist button is existed
     Element Should Be Visible    ${product_detail_locator.wishlist_button}
@@ -63,10 +58,32 @@ Verify you may so like part has product suggestion
 Verify similar product part has product suggestion
     Element Should Be Visible       ${product_detail_locator.product_on_similar_product}
 
-
+Verify all required element on the product detail page
+    Verify add wishlist button is existed
+    Verify main image is existed
+    Verify product name is existed
+    Verify product price is existed
+    Verify sku is existed
+    Verify share on icons is existed
+    Verify you may so like part has product suggestion
+    Verify similar product part has product suggestion
+    
 Add product to wishlist
-    Click Element       ${product_detail_locator.wishlist_button}
-    ${product_name}     ${product_detail_locator.product_name}
+    Click Element           ${product_detail_locator.wishlist_button}
+    ${product_name}         ${product_detail_locator.product_name}
     Return ${product_name}
+
+Select a random product and add it to cart
+    common_keywords.Click a random product on first view
+    common_keywords.Click Element       ${product_detail_locator.add_to_cart_button}
+    BuiltIn.Sleep       5s 
+
+Select a random product and add it to wishlist
+    common_keywords.Click a random product on first view
+    common_keywords.Click Element           ${product_detail_locator.wishlist_button}
+    ${product_name}         SeleniumLibrary.Get text       ${product_detail_locator.product_name}
+    [Return]                ${product_name}
+    
+
 
 

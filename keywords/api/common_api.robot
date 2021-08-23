@@ -73,6 +73,6 @@ Login tops user and get list product name on wishlist
 Login tops user and get list product name on shopping cart
     ${user_cookie}          Post Login tops user                        ${user.email}      ${user.password}
     ${user_token}           Get use_token from login response cookie    ${user_cookie}
-    ${cart_response}    Get user shopping cart info                 ${user_token}
+    ${cart_response}        Get user shopping cart info                 ${user_token}
     ${list_product_name}    JSONLibrary.Get Value From Json             ${cart_response}     ${cart_product_query}
     [Return]                ${list_product_name}

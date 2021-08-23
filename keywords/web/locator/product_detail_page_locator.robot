@@ -5,7 +5,7 @@
 ...     product_name=xpath=//div[@class='name']/h1
 ...     sku=xpath=//div[@class='sku']
 ...     product_remark=xpath=//div[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[1]/div[4]/div/div
-...     wishlist_button=xpath=//div[@data-testid="btn-addProduct-OnAddWishlist"]/img
+...     wishlist_button=css=[data-testid="btn-addProduct-OnAddWishlist"] img
 ...     product_price=xpath=//div[@class='price-block']
 ...     add_to_cart_button=xpath=//div[@class="add-to-cart"]//button
 ...     share_on_facebook=xpath=//div[@class='social-share']/div[2]/img

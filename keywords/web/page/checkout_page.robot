@@ -8,9 +8,11 @@ Resource    ${CURDIR}/../locator/checkout_page_locator.robot
 Verify the checkout page contain added product
         Page Should Contain element     ${checkout_locator.product_on_checkout_page}
 
-Get list product appear on checkout screen
+Get list product appear on checkout page
+        common_keywords.Verify Web Element Is Visible                   ${checkout_locator.product_name} 
         ${element}              SeleniumLibrary.Get WebElements         ${checkout_locator.product_name}
-        ${number_of_element}    BuiltIn.Get Length     ${element}
+        ${number_of_element}    BuiltIn.Get Length                      ${element}
+        BuiltIn.Run Keyword If     '${number_of_element}'=='0'      Fail    Not found!
         FOR     ${index}          IN RANGE         ${number_of_element}
                 ${name}         SeleniumLibrary.Get Text        ${element}[${index}]        
                 Collections.Append To List      ${list_name}    ${name}

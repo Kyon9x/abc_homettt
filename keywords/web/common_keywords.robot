@@ -115,8 +115,6 @@ Scroll Down with times
         SeleniumLibrary.Execute Javascript     window.scrollTo(0,${${scroll_length}*${index}})
     END
 
-Navigate to shopping cart
-
 Navigate to my wishlist page
     Click Element                       ${common_locator.my_list}  
 
@@ -133,6 +131,7 @@ Go to home page and login
     [Arguments]     ${url}      ${user_name}    ${password}
     Open browser to page        ${url}
     Login tops user             ${user_name}    ${password}
+
 Go back to home page
     SeleniumLibrary.Go to       ${page_url}
     
