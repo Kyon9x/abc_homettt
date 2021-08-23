@@ -4,19 +4,19 @@ Resource    ${CURDIR}/../locator/product_detail_page_locator.robot
 
 ***Keyword***
 Click to wishlist button
-    Click Element  ${product_detail_locator.wishlist_button}
+    Click Element       ${product_detail_locator.wishlist_button}
 
 Click to wishlist page
-    Click Element  ${product_detail_locator.my_list_navigation}
+    Click Element       ${product_detail_locator.my_list_navigation}
 
-Click to cart button
-    Click Element  xpath=//button[@data-productid="8851111414321"]
+Select a random product and add it to cart
+    common_keywords.Click a random product on first view
+    Click Element       ${product_detail_locator.add_to_cart_button}
+    BuiltIn.Sleep       5s 
 
 Click to cart icon to checkout
-    Wait Until Element Is Visible       ${product_detail_locator.cart_to_checkout}
-    Scroll Element Into View        ${product_detail_locator.cart_to_checkout}
-    Mouse Over      ${product_detail_locator.cart_to_checkout}
-    Wait Until Element Is Visible      ${product_detail_locator.checkout_button}
+    SeleniumLibrary.Mouse Over      ${product_detail_locator.cart_icon}
+    common_keywords.Verify Web Element Is Visible      ${product_detail_locator.checkout_button}
     Click Element       ${product_detail_locator.checkout_button}
 
 Verify add wishlist button is existed

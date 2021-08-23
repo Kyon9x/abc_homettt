@@ -64,16 +64,14 @@ Get user shopping cart info
     [Return]                ${response}
 
 Login tops user and get list product name on wishlist
-    [Arguments]             ${user_name}        ${password}
-    ${user_cookie}          Post Login tops user  ${user_name}      ${password}
+    ${user_cookie}          Post Login tops user  ${user.email}      ${user.password}
     ${user_token}           Get use_token from login response cookie  ${user_cookie}
     ${wishlist_response}    Get user wishlist info       ${user_token}
     ${list_product_name}    JSONLibrary.Get Value From Json     ${wishlist_response}     ${wishlist_product_query}
     [Return]                ${list_product_name}
 
 Login tops user and get list product name on shopping cart
-    [Arguments]             ${user_name}        ${password}
-    ${user_cookie}          Post Login tops user                        ${user_name}      ${password}
+    ${user_cookie}          Post Login tops user                        ${user.email}      ${user.password}
     ${user_token}           Get use_token from login response cookie    ${user_cookie}
     ${cart_response}    Get user shopping cart info                 ${user_token}
     ${list_product_name}    JSONLibrary.Get Value From Json             ${cart_response}     ${cart_product_query}

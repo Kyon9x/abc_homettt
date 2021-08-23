@@ -19,3 +19,5 @@
 ...     my_list_navigation=xpath=//a[@href="/en/wishlist"]
 ...     cart_to_checkout=xpath=//div[@class='m-cart']
 ...     checkout_button=css=button[class="Button__StyledButton-r30g8h-0 eQRcWY"]
+...     cart_icon=css=[class="MiniCartContainer__LinkQty-sc-1k9g20s-1 fEGmfr"]
+...     add_to_cart_button=css=[class="add-to-cart"] [data-testid="add-product-button"]
