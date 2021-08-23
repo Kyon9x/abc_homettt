@@ -1,23 +1,17 @@
 *** Variables ***
 &{product_detail_locator}
 ...     entire_page=xpath=/html[1]
-...     main_image=xpath=//img[@src= 'https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_e20-04-2020.jpg']
-...     preview_image1=xpath=//div[@class='images-preview']/div/div/img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_e20-04-2020.jpg']
-...     preview_image2=xpath=//div[@class='images-preview']//img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_x2_e24-12-2020.jpg']
-...     preview_image3=xpath=//div[@class='images-preview']//img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_x3_e24-12-2020.jpg']
-...     preview_image4=xpath=//div[@class='images-preview']//img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_x4_e24-12-2020.jpg']
-...     preview_image5=xpath=//div[@class='images-preview']//img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_x5_e24-12-2020.jpg']
-...     preview_image6=xpath=//div[@class='images-preview']//img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_x6_e24-12-2020.jpg']
-...     product_name=xpath=//h1[text()='Mamy Poko Pants Extra Dry Skin Baby Diaper Pants Boy Size XL 56pcs.']
+...     main_image=xpath=//div[@class='main-image']/div/img
+...     product_name=xpath=//div[@class='name']/h1
 ...     sku=xpath=//div[@class='sku']
-...     product_remark=xpath=//div[@class='common-description']//div[text()='Enter coupon "UN225" Free! 225.-off when you shop participating products at 1500.-/receipt.']
-...     wishlist_button=xpath=//*[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[2]/div[1]/img
+...     product_remark=xpath=//div[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[1]/div[4]/div/div
+...     wishlist_button=xpath=//div[@data-testid="btn-addProduct-OnAddWishlist"]/img
 ...     product_price=xpath=//div[@class='price-block']
-...     add_to_cart_button=xpath=//button[@data-productid="8851111414321"]
-...     share_on_facebook=xpath=//img[@src='/assets/icons/social/ic-social-facebook.svg']
-...     share_on_twitter=xpath=//img[@src='/assets/icons/social/ic-social-twitter.svg']
-...     share_on_line=xpath=//img[@src='/assets/icons/social/ic-social-line-chat.svg']
-...     share_on_mail=xpath=//img[@src='/assets/icons/social/ic-social-email.svg']
+...     add_to_cart_button=xpath=//div[@class="add-to-cart"]//button
+...     share_on_facebook=xpath=//div[@class='social-share']/div[2]/img
+...     share_on_twitter=xpath=//div[@class='social-share']/div[3]/img
+...     share_on_line=xpath=//div[@class='social-share']/div[4]/img
+...     share_on_mail=xpath=//a[@class='social-btn']/img
 ...     you_may_so_like_part=xpath=//h2[text()='You may also like']
 ...     product_on_you_may_so_like=xpath=//div[@class="mt-product-item swiper-slide Js-trackProductClick swiper-slide-next"]
 ...     similar_product_part=xpath=//h2[text()='Similar products']
