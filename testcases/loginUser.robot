@@ -35,9 +35,8 @@ Testcase 3: Add a product to cart
     #2. Call API de lay list product
     #3. Click cart checkout page 
     #4. Verify product dang hien thi voi sp get duoc tu api
-    common_keywords.Click a random product on first view
-    product_detail_page.Click to cart button
-    common_api.Login tops user and get list product name on shopping cart   ${user.email}      ${user.password}
-    BuiltIn.Sleep    5s
+    #product_detail_page.Select a random product and add it to cart
     product_detail_page.Click to cart icon to checkout
-    checkout_page.Verify the checkout page contain added product
+    ${list_product}             common_api.Login tops user and get list product name on shopping cart
+    ${list_product_on_cart}     checkout_page.Get list product appear on checkout screen
+    checkout_page.Verify product in cart same with product in API   ${list_product}  ${list_product_on_cart}
