@@ -1,6 +1,6 @@
 *** Variables ***
 &{common_locator}
-...     entire_page=xpath=/html[@style="overflow: visible;"]
+...     entire_page=xpath=/html[1]
 ...     user_input=css=input.input-wrap[name='email']
 ...     user_password=css=input.input-wrap[name='password']
 ...     submit_button=css=button[type='submit']
@@ -11,3 +11,4 @@
 ...     best_deal_list_ele=css=#campaign-catalog .swiper-wrapper > div
 ...     mom_n_kid=css=[data-testid="seasonal-product-carousel-container"] [class="swiper-container swiper-container-initialized swiper-container-horizontal"] [class="swiper-wrapper"] >div
 ...     my_list=xpath=//a[text()='My List']
+...     popup=xpath=//div[@id="ematic_popUpOverlay_35217_56001_1"]/form[1]/div

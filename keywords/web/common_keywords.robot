@@ -30,7 +30,7 @@ Click a random product on first view
     Verify Web Element Is Visible       ${common_locator.mom_n_kid}
     Scroll To Element                   ${common_locator.mom_n_kid}
     ${list_ele}     Get WebElements     ${common_locator.mom_n_kid}
-    Click Element  ${list_ele}[1]
+    Click Element  ${list_ele}[2]
     Close popup if it appeared                      ${common_locator.home_page_noti_if}
 
 Get text and compare value

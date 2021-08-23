@@ -3,8 +3,23 @@ Resource    ${CURDIR}/../../../testdata/import_resources.robot
 Resource    ${CURDIR}/../locator/product_detail_page_locator.robot
 
 ***Keyword***
+Click to wishlist button
+    Click Element  ${product_detail_locator.wishlist_button}
+
+Click to wishlist page
+    Click Element  ${product_detail_locator.my_list_navigation}
+
+Click to cart button
+    Mouse Over  ${product_detail_locator.add_to_cart_button}
+
+Click to cart icon to checkout
+    Click Element  xpath=/html/body/script[8]/text()
+
 Verify add wishlist button is existed
     Element Should Be Visible    ${product_detail_locator.wishlist_button}
+
+Verify add to cart buttin is existed
+    Element Should Be Visible       ${product_detail_locator.add_to_cart_button}
 
 Verify main image is existed
     Page Should Contain Element     ${product_detail_locator.main_image}

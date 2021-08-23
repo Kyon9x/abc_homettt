@@ -1,6 +1,6 @@
 *** Variables ***
 &{product_detail_locator}
-...     entire_page=xpath=/html[@style="overflow: visible;"]
+...     entire_page=xpath=/html[1]
 ...     main_image=xpath=//img[@src= 'https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_e20-04-2020.jpg']
 ...     preview_image1=xpath=//div[@class='images-preview']/div/div/img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_e20-04-2020.jpg']
 ...     preview_image2=xpath=//div[@class='images-preview']//img[@src='https://backend.tops.co.th/media//catalog/product/8/8/8851111414321_x2_e24-12-2020.jpg']
@@ -11,9 +11,9 @@
 ...     product_name=xpath=//h1[text()='Mamy Poko Pants Extra Dry Skin Baby Diaper Pants Boy Size XL 56pcs.']
 ...     sku=xpath=//div[@class='sku']
 ...     product_remark=xpath=//div[@class='common-description']//div[text()='Enter coupon "UN225" Free! 225.-off when you shop participating products at 1500.-/receipt.']
-...     wishlist_button=xpath=//div[@data-testid='btn-addProduct-OnAddWishlist']//img[@src='/assets/icons/favorite-outline.svg']
+...     wishlist_button=xpath=//div[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[2]/div[1]/img
 ...     product_price=xpath=//div[@class='price-block']
-...     add_to_cart_button=xpath=//button[@data-testid='add-product-button' and @data-productname='Mamy Poko Pants Extra Dry Skin Baby Diaper Pants Boy Size XL 56pcs.']
+...     add_to_cart_button=xpath=//*[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[2]/div[3]/div/button
 ...     share_on_facebook=xpath=//img[@src='/assets/icons/social/ic-social-facebook.svg']
 ...     share_on_twitter=xpath=//img[@src='/assets/icons/social/ic-social-twitter.svg']
 ...     share_on_line=xpath=//img[@src='/assets/icons/social/ic-social-line-chat.svg']
@@ -23,3 +23,4 @@
 ...     similar_product_part=xpath=//h2[text()='Similar products']
 ...     product_on_similar_product=xpath=//div[@id="similarity"]/div[1]/div[1]/div[2]
 ...     my_list_navigation=xpath=//a[@href="/en/wishlist"]
+...     cart_to_checkout=xpath=//div[@class='m-cart']

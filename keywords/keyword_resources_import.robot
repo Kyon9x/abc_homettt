@@ -6,5 +6,6 @@ Resource    ${CURDIR}/web/common_keywords.robot
 Resource    ${CURDIR}/web/page/login_page.robot
 Resource    ${CURDIR}/api/common_api.robot
 Resource    ${CURDIR}/../testdata/import_resources.robot
+Resource    ${CURDIR}/web/page/checkout_page.robot
 
 
