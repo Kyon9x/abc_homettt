@@ -24,3 +24,4 @@
 ...     product_on_similar_product=xpath=//div[@id="similarity"]/div[1]/div[1]/div[2]
 ...     my_list_navigation=xpath=//a[@href="/en/wishlist"]
 ...     cart_to_checkout=xpath=//div[@class='m-cart']
+...     checkout_button=css=button[class="Button__StyledButton-r30g8h-0 eQRcWY"]

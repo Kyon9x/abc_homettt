@@ -10,10 +10,11 @@ Click to wishlist page
     Click Element  ${product_detail_locator.my_list_navigation}
 
 Click to cart button
-    Mouse Over  ${product_detail_locator.add_to_cart_button}
+    Click Element  xpath=//button[@data-productid="8851111414321"]
 
 Click to cart icon to checkout
-    Click Element  xpath=/html/body/script[8]/text()
+    Mouse Over  ${product_detail_locator.cart_to_checkout}
+    Click Element  ${product_detail_locator.checkout_button}
 
 Verify add wishlist button is existed
     Element Should Be Visible    ${product_detail_locator.wishlist_button}
