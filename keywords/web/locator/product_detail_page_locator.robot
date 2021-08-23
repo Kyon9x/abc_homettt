@@ -11,9 +11,9 @@
 ...     product_name=xpath=//h1[text()='Mamy Poko Pants Extra Dry Skin Baby Diaper Pants Boy Size XL 56pcs.']
 ...     sku=xpath=//div[@class='sku']
 ...     product_remark=xpath=//div[@class='common-description']//div[text()='Enter coupon "UN225" Free! 225.-off when you shop participating products at 1500.-/receipt.']
-...     wishlist_button=xpath=//div[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[2]/div[1]/img
+...     wishlist_button=xpath=//*[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[2]/div[1]/img
 ...     product_price=xpath=//div[@class='price-block']
-...     add_to_cart_button=xpath=//*[@id="layout"]/div[2]/div[3]/div/div/div[3]/div/div[2]/div[2]/div[3]/div/button
+...     add_to_cart_button=xpath=//button[@data-productid="8851111414321"]
 ...     share_on_facebook=xpath=//img[@src='/assets/icons/social/ic-social-facebook.svg']
 ...     share_on_twitter=xpath=//img[@src='/assets/icons/social/ic-social-twitter.svg']
 ...     share_on_line=xpath=//img[@src='/assets/icons/social/ic-social-line-chat.svg']

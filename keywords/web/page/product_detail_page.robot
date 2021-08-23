@@ -13,8 +13,11 @@ Click to cart button
     Click Element  xpath=//button[@data-productid="8851111414321"]
 
 Click to cart icon to checkout
-    Mouse Over  ${product_detail_locator.cart_to_checkout}
-    Click Element  ${product_detail_locator.checkout_button}
+    Wait Until Element Is Visible       ${product_detail_locator.cart_to_checkout}
+    Scroll Element Into View        ${product_detail_locator.cart_to_checkout}
+    Mouse Over      ${product_detail_locator.cart_to_checkout}
+    Wait Until Element Is Visible      ${product_detail_locator.checkout_button}
+    Click Element       ${product_detail_locator.checkout_button}
 
 Verify add wishlist button is existed
     Element Should Be Visible    ${product_detail_locator.wishlist_button}
