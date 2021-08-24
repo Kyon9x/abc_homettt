@@ -83,7 +83,11 @@ Select a random product and add it to wishlist
     common_keywords.Click Element           ${product_detail_locator.wishlist_button}
     ${product_name}         SeleniumLibrary.Get text       ${product_detail_locator.product_name}
     [Return]                ${product_name}
-    
+
+Select a random product and add it to wishlist with guest user
+    common_keywords.Click a random product on first view
+    common_keywords.Click Element           ${product_detail_locator.wishlist_button}
+     
 
 
 

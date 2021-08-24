@@ -1,7 +1,7 @@
 *** Setting ***
 Resource    ${CURDIR}/../keywords/keyword_resources_import.robot
 Suite Setup       common_keywords.Go to home page and login  ${page_url}      ${user.email}      ${user.password}
-#Suite Teardown    Close All Browsers
+Suite Teardown    Close All Browsers
 
 *** Test Cases ***
 Testcase 1: Verify all required elements on product detail page

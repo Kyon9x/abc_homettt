@@ -10,7 +10,7 @@ Testcase 1: Verify all require elements on product detail page with guest user
 
 Testcase 2: Add a product to wishlist by guest user
     common_keywords.Go back to home page
-    product_detail_page.Select a random product and add it to wishlist
+    product_detail_page.Select a random product and add it to wishlist with guest user
     login_page.Verify login page is displayed   
 
 Testcase 3: Add a product to cart by guest user
